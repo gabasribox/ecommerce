@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.background {
+  @apply
+    bg-neutral-100
+    text-neutral-900
+    dark:bg-neutral-900
+    dark:text-neutral-100
+    font-medium
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.end {
+  @apply
+    flex
+    justify-end
+    items-center
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.center {
+  @apply
+    flex
+    justify-center
+    items-center
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.column-1 {
+  @apply
+    flex
+    flex-col
+    gap-1
+}
+
+.column-5 {
+  @apply
+    flex
+    flex-col
+    gap-5
+}
+
+.row {
+  @apply
+    flex
+    flex-row
+    gap-2
+}
+
+.default-button {
+  @apply 
+    flex
+    justify-center  
+    px-4
+    py-2 
+    text-neutral-100
+    bg-neutral-900
+    hover:bg-neutral-700
+    dark:text-neutral-900
+    dark:bg-neutral-100
+    dark:hover:bg-neutral-300
+    rounded-lg  
+    cursor-pointer
+}
+
+.underlined {
+  @apply 
+    underline 
+    text-blue-600 
+    hover:text-blue-800 
+    dark:text-blue-500 
+    dark:hover:text-blue-300
+}
+
+.input {
+  @apply 
+    w-full 
+    py-2
+    pl-2
+    pr-2
+    border 
+    border-neutral-300 
+    dark:border-neutral-700 
+    text-neutral-400
+    dark:text-neutral-700
+    focus:text-neutral-900
+    dark:focus:text-neutral-100
+    focus:bg-neutral-300
+    dark:focus:bg-neutral-700
+    rounded-lg
+    outline-none
 }

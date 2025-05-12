@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+.container-styles {
+  @apply
+    mx-auto
+    p-10 
+    border
+    border-neutral-300 
+    dark:border-neutral-700 
+    text-neutral-900 
+    dark:text-neutral-100
+    rounded-lg
+}
+
+.container-title {
+  @apply 
+    flex 
+    justify-center
+    mb-5
+    text-2xl
+    font-bold 
+}
