@@ -30,7 +30,7 @@
     h-screen 
     dark:bg-neutral-900 
     shadow-md 
-    shadow-neutral-800 
+    shadow-neutral-700 
     text-neutral-500 
     transition-all 
     duration-300 
@@ -65,6 +65,7 @@
     text-neutral-900
     dark:text-neutral-100
     font-bold
+    cursor-default
 }
 
 /* Style of the divider line in the sidebar */
@@ -142,7 +143,7 @@
   @apply 
     flex-1 
     pt-15.5 
-    pl-20
+    md:pl-20
     min-h-screen 
     transition-all 
     duration-300 

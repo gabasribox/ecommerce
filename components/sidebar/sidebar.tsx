@@ -14,10 +14,10 @@ type SidebarProps = {
 
 /* Path of the Tabs */
 const links = [
-  { href: "/admin/dashboard", title: "Admin Dashboard", label: "Dashboard" },
-  { href: "/admin/dashboard/orders", title: "Orders Page", label: "Orders" },
-  { href: "/admin/dashboard/products", title: "Products Page", label: "Products" },
-  { href: "/admin/dashboard/clients", title: "Clients Page", label: "Clients" },
+  { href: "/admin/dashboard", title: "Dashboard", label: "Dashboard" },
+  { href: "/admin/dashboard/orders", title: "Orders", label: "Orders" },
+  { href: "/admin/dashboard/products", title: "Products", label: "Products" },
+  { href: "/admin/dashboard/clients", title: "Clients", label: "Clients" },
 ];
 
 const Sidebar = ({ children }: SidebarProps) => {
@@ -97,7 +97,7 @@ const Sidebar = ({ children }: SidebarProps) => {
           {/* The text in the bottom content the version of the application */}
           <div className="text-bottom">
             <div className="version-text">
-              Version 1.0.0
+              Version 1.0.1
             </div>
           </div>
         </div>
