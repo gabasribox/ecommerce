@@ -9,19 +9,24 @@ datasource db {
 
 model Admin {
   id                  String        @id @default(uuid())
-  name                String    
+  name                String
   email               String        @unique
-  password            String
+  passwordHash        String
+  resetToken          String?
+  tokenExpiry         DateTime?
   role                Role          @default(ADMIN)
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
 }
 
 model Client {
   id                  String        @id @default(uuid())
   name                String
-  email               String
+  email               String        @unique
   address             String?
   phone               String?
   orders              Order[]
+  createdAt           DateTime      @default(now())
 }
 
 model Product {
@@ -32,6 +37,7 @@ model Product {
   stock               Int
   sku                 String?       @unique
   orders              OrderItem[]
+  createdAt           DateTime      @default(now())
 }
 
 model Order {
@@ -42,7 +48,7 @@ model Order {
   total               Float
   status              OrderStatus   @default(PENDING)
   createdAt           DateTime      @default(now())
-  updateAt            DateTime      @updatedAt
+  updatedAt           DateTime      @updatedAt
 }
 
 model OrderItem {
@@ -52,7 +58,7 @@ model OrderItem {
   product             Product       @relation(fields: [productId], references: [id])
   productId           Int
   quantity            Int
-  priceAtPurchase     Int
+  priceAtPurchase     Float
 }
 
 enum Role {
@@ -62,7 +68,7 @@ enum Role {
 
 enum OrderStatus {
   PENDING
-  PROCESS
+  PROCESSING
   SHIPPED
   DELIVERED
   CANCELLED
