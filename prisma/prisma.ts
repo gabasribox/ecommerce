@@ -9,7 +9,8 @@ const globalForPrisma = globalThis as unknown as {
 const prisma = globalForPrisma.prisma ?? new PrismaClient();
 
 /* During the development, stores in the global scope for hot-reload */
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
+if (process.env.NODE_ENV !== 'production') 
+  globalForPrisma.prisma = prisma;
 
 /* Exports the variable */
 export default prisma;
