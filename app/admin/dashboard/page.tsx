@@ -4,7 +4,7 @@ export default function Dashboard() {
   return (
     <main>
       <Sidebar>
-        Admin Dashboard
+        Dashboard Page
       </Sidebar>
     </main>
   )
